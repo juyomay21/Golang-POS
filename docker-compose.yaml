@@ -1,0 +1,56 @@
+# docker-compose.yaml
+version: "3.7"
+
+services:
+  posapp-be-test:
+    container_name: posapp-be-test
+    image: jetdev7/posapp-be-test
+    build: .
+      # context: .
+      # target: dev
+    # volumes:
+    #   - .:/app
+    ports:
+      - "8090:3030"
+#      - "2345:2345"
+    # networks:
+    #   - go-pos-network
+
+  # go-pos-db:
+  #   container_name: go-pos-db
+  #   image: postgres
+  #   environment:
+  #     - POSTGRES_USER=${DB_USER}
+  #     - POSTGRES_PASSWORD=${DB_PASSWORD}
+  #     - POSTGRES_DB=${DB_NAME}
+  #   volumes:
+  #     - postgres-db:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - go-pos-network
+
+#   mysql-db:
+#     container_name: pos-mysql-db
+#     image: mysql:5.7.22
+# #    build: ./mysql-db
+#     restart: always
+#     environment:
+#       MYSQL_DATABASE: ${DB_NAME}
+#       MYSQL_USER: ${DB_USER}
+#       MYSQL_PASSWORD: ${DB_PASSWORD}
+#       MYSQL_ROOT_PASSWORD: root
+#       MYSQL_HOST: ${DB_HOST}
+#     volumes:
+# #      - .dbdata:/var/lib/mysql
+#       - /Users/A/Documents/.docker/mysql/data
+#     # map mysql port to a different port
+#     ports:
+#       - "3306:3306"
+
+# volumes:
+#   mysql-db:
+
+# networks:
+#   go-pos-network:
+#     name: go-pos-network
